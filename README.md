@@ -1,7 +1,7 @@
 ﻿
-# Projeto: Problema da Mochila 0-1 com Capacidade de até 10 Itens por Tipo
+# Projeto: Problema da Mochila com Capacidade de até 10 Itens por Tipo
 
-Este projeto implementa uma solução para o problema da mochila 0-1, onde cada tipo de item pode ser selecionado até 10 vezes. A solução utiliza programação dinâmica para determinar a seleção de itens que maximiza o valor total sem exceder a capacidade da mochila.
+Este projeto implementa um algoritmo para o problema da mochila, onde cada tipo de item pode ser selecionado até 10 vezes. A solução utiliza programação dinâmica para determinar a seleção de itens que maximiza o valor total sem exceder a capacidade da mochila.
 
 ## Estrutura do Projeto
 
