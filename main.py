@@ -10,19 +10,16 @@ def read_instance(filename):
 def knapsack_10_instance(filename):
     n, capacity, items = read_instance(filename)
     
-    # Initialize DP table
     OPT = [[0] * (capacity + 1) for _ in range(n + 1)]
     
-    # Fill the DP table
     for i in range(1, n + 1):
         v_i, w_i = items[i - 1]
         for b in range(capacity + 1):
-            OPT[i][b] = OPT[i - 1][b]  # Don't take item i
+            OPT[i][b] = OPT[i - 1][b]
             for k in range(1, 11):
                 if k * w_i <= b:
                     OPT[i][b] = max(OPT[i][b], OPT[i - 1][b - k * w_i] + k * v_i)
     
-    # Trace back to find the items included in the optimal solution
     b = capacity
     selected_items = []
     for i in range(n, 0, -1):
@@ -33,14 +30,12 @@ def knapsack_10_instance(filename):
                 b -= k * w_i
                 break
     
-    # Print the optimal solution value and selected items
     optimal_value = OPT[n][capacity]
     print(f"Optimal value: {optimal_value}")
     print("Selected items (item index, quantity):")
     for item in selected_items:
         print(item)
 
-# Test the function with provided instances
 for i in range(1, 9):
     filename = f'inst{i}.txt'
     print(f"Instance {i}:")
